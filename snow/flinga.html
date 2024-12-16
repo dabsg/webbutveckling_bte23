@@ -25,12 +25,14 @@
 
 
     <script>
-
-        var x=100;
-        var y=100;
+        var r=10;
+        var x=300;
+        var y=-r;
         var ySpeed=1;
         var xSpeed=5;
-        const g=0.7;
+        const g=0.2;
+        var degree=0;
+        
         var width=window.innerWidth;
         var height=window.innerHeight;
 
@@ -46,7 +48,7 @@
             ctx.fillStyle="rgba(255,255,255,0.8)";
             ctx.beginPath();
             ctx.moveTo(x,y);
-            ctx.arc(x, y, 100, 0, 2 * Math.PI);
+            ctx.arc(x, y, r, 0, 2 * Math.PI);
             ctx.fill();
             console.log("ritar ut")
             update();
@@ -54,22 +56,23 @@
 
         function update(){
 
-            if(y>=height-50 || y<=50){
+            degree=degree+2;
 
-                ySpeed=ySpeed*-1;
-                
-            }
 
-            if(x>=width-50 || x<=50){
+            if(y>=height+r){
 
-                xSpeed=xSpeed*-1*0.9;
+                ySpeed=1;
+                y=-r;
 
             }
 
-            x=x+xSpeed;
+           x=x+ Math.cos(degree * Math.PI / 180)*0.5*r;
+
+
+            //x=x+xSpeed;
             y=y+ySpeed;
 
-            ySpeed=ySpeed+g;
+           // ySpeed=ySpeed+g;
 
         }
 
