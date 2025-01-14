@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="save.php" method="get">
+        <label for="t1">här skall du mata in första talet</label>
+        <input type="color" id="t1" name="tal1"><br>
+        <label for="t2">här skall du mata in tal två</label>
+        <input type="text" id="t2" name="tal2"><br>
+
+        <button id="calc">button</button>
+
+    </form>
+
+    <div id="demo">svar= 0</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+$("#calc").click(function (event){
+    event.preventDefault();
+    let tal1 = $("#t1").val();
+    let tal2 = $("#t2").val();
+    let summa = parseFloat(tal1) * parseFloat(tal2);
+    $("#demo").text("svar: " + summa);
+    
+});
+
+
+
+</script>
+</body>
+</html>
