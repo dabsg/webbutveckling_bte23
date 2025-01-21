@@ -1,0 +1,12 @@
+
+
+#bilder{
+    position: relative;
+    display: flex;
+}
+#window{
+
+height:852px;
+width:1280px;
+overflow: hidden;
+}
